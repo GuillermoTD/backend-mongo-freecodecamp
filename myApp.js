@@ -2,6 +2,10 @@ require('dotenv').config();
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+
+
 const personSchema = Schema({
   name: { type: String, required: true },
   age: Number,
